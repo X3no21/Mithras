@@ -1,0 +1,12 @@
+{
+  "DIR818L_FW105b01": {"model": "DIR-818L", "ip_address": "192.168.0.1"},
+  "DIR822B1_FW202KRb06": {"model": "DIR-822", "ip_address": "192.168.0.1"},
+  "DIR822C1_FW303WWb04_i4sa_middle": {"model": "DIR-822", "ip_address": "192.168.0.1"},
+  "DIR846enFW100A53DLA-Retail": {"model": "DIR-846", "ip_address": "192.168.0.1"},
+  "DIR868LB1_FW203b01": {"model": "DIR-868L", "ip_address": "10.0.4.1"},
+  "DIR880A1_FW100b48": {"model": "DIR-880", "ip_address": "192.168.0.1"},
+  "DIR890LA1_FW111b04": {"model": "DIR-890L", "ip_address": "192.168.0.1"},
+  "DIR-860L_B1_FW203b03": {"model": "DIR-860L", "ip_address": "192.168.0.1"},
+  "DIR-880L_A1_FW107WWb08": {"model": "DIR-880L", "ip_address": "192.168.0.1"},
+  "DIR-890L_REVA1_FW100b25": {"model": "DIR-890L", "ip_address": "192.168.0.1"}
+}

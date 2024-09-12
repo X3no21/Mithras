@@ -1,0 +1,8 @@
+python-magic
+flask
+networkx
+python-dotenv
+keystone-engine
+loguru
+lief
+pexpect

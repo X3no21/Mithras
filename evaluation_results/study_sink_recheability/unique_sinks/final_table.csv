@@ -1,0 +1,12 @@
+app,mean_SAC,mean_TRPO,mean_Rand,area_SAC,area_TRPO,area_Rand
+com.habitrpg.android.habitica,7.66 M(Rand),9.23 M(Rand),3.95,69.40 M(Rand),82.95 L(Rand),35.45
+com.radioplayer.mobile,8.79,6.89,7.23,79.10 M(TRPO),61.80,65.00
+de.komoot.android,150.93,134.45,103.47,1355.70 L(Rand),1208.90,932.45
+com.funnmedia.waterminder,12.70,11.54,9.16,114.55,103.90,82.30
+com.pallo.passiontimerscoped,18.65,22.77,13.26,167.40,204.70 L(Rand),119.10
+org.iggymedia.periodtracker,35.71 M(Rand),38.49 M(Rand),20.42,322.70 L(Rand),346.85 L(Rand),183.00
+com.google.android.wearable.app,25.12 M(Rand;TRPO),14.49,14.02,227.35,130.75,125.75
+au.com.auspost.android,5.19 L(Rand),6.01 L(Rand),2.03,47.15 L(Rand),54.25 L(Rand),18.40
+com.calm.android,5.36 M(Rand),6.12 M(Rand),2.53,48.20,54.90,22.70
+com.outdooractive.Outdooractive,42.61,31.98,33.80,385.40,284.30,303.90
+Overall,31.27 L(Rand),28.20 L(Rand),20.99,281.69 L(Rand),253.33 L(Rand),188.81

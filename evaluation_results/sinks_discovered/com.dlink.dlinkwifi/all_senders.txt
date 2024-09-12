@@ -1,0 +1,2 @@
+w2.b<SEP>Q<SEP>java.lang.String<PARAM>java.lang.String<PARAM>int<PARAM>com.dlink.router.hnap.data.HNAPObject<PARAM>boolean<PARAM>java.lang.String<SEP>java.lang.String
+w2.b<SEP>makeHnapJsonRequest<SEP>java.lang.String<PARAM>com.dlink.router.hnap.data.HNAPObject<SEP>void

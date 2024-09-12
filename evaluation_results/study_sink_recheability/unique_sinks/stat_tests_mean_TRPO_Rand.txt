@@ -1,0 +1,20 @@
+com.habitrpg.android.habitica - ANOVA: the two algorithms have different behaviors
+
+com.radioplayer.mobile - ANOVA: the two algorithms perform the same
+
+de.komoot.android - ANOVA: the two algorithms perform the same
+
+com.funnmedia.waterminder - ANOVA: the two algorithms perform the same
+
+com.pallo.passiontimerscoped - ANOVA: the two algorithms perform the same
+
+org.iggymedia.periodtracker - ANOVA: the two algorithms have different behaviors
+
+com.google.android.wearable.app - ANOVA: the two algorithms perform the same
+
+au.com.auspost.android - ANOVA: the two algorithms have different behaviors
+
+com.calm.android - ANOVA: the two algorithms have different behaviors
+
+com.outdooractive.Outdooractive - ANOVA: the two algorithms perform the same
+

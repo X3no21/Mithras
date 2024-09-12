@@ -1,0 +1,20 @@
+com.habitrpg.android.habitica - WILCOXON: the two algorithms perform the same
+
+com.radioplayer.mobile - WILCOXON: the two algorithms perform the same
+
+de.komoot.android - WILCOXON: the two algorithms perform the same
+
+com.funnmedia.waterminder - WILCOXON: the two algorithms perform the same
+
+com.pallo.passiontimerscoped - WILCOXON: the two algorithms have different behaviors
+
+org.iggymedia.periodtracker - WILCOXON: the two algorithms perform the same
+
+com.google.android.wearable.app - WILCOXON: the two algorithms perform the same
+
+au.com.auspost.android - WILCOXON: the two algorithms perform the same
+
+com.calm.android - WILCOXON: the two algorithms perform the same
+
+com.outdooractive.Outdooractive - ANOVA: the two algorithms perform the same
+

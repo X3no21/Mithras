@@ -1,0 +1,17 @@
+[Unit]
+Description=Log Server
+After=network.target
+
+[Service]
+ExecStart=python3 /home/raspberry/services/log_server.py
+
+Restart=on-failure
+User=raspberry
+Group=raspberry
+
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=my_service
+
+[Install]
+WantedBy=multi-user.target
