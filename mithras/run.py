@@ -18,7 +18,6 @@ from src.soot_wrapper.lifter import Lifter
 from src.node_filter.node_filter import NodeFilter
 from src.target_methods_hooker.target_methods_hooker import TargetMethodsHooker
 from src.layout_agent.test_application import TestApp, RLAlgorithms, EmuType
-from src.layout_agent.utils.utils import EmulatorLauncher
 from src.layout_agent.PlayStoreDownloader import *
 from src.layout_agent.utils.utils import AppiumLauncher
 from src.utils.apkdiff import count_diff
@@ -345,6 +344,7 @@ class IoTFuzzer:
             self.separators['par'][1] + self.separators['ret'][0] + ret + self.separators['ret'][1] + \
             self.separators['pkg_name'][0] + pkg_name + self.separators['pkg_name'][1]
 
+
     def manual_app_hooking(self, sink_methods_to_hook, intermediate_methods_to_hook, listeners_to_hook,
                            fragments_to_hook):
         methods_to_hook = {}
@@ -359,7 +359,6 @@ class IoTFuzzer:
             params = intermediate_method[2]
             ret = intermediate_method[3]
             hooking = self.method_to_string(cls, method, params, ret, self.config['proc_name'])
-
             methods_to_hook[hooking] = {}
             methods_to_hook[hooking]["type"] = ["INTERMEDIATE"]
             methods_to_hook[hooking]['cls'] = cls
@@ -373,7 +372,6 @@ class IoTFuzzer:
             params = sink[2]
             ret = sink[3]
             hooking = self.method_to_string(cls, method, params, ret, self.config['proc_name'])
-
             if hooking in methods_to_hook:
                 methods_to_hook[hooking]["type"].append("SINK")
             else:
@@ -390,7 +388,6 @@ class IoTFuzzer:
             params = listener[2]
             ret = listener[3]
             hooking = self.method_to_string(cls, method, params, ret, self.config['proc_name'])
-
             if hooking in methods_to_hook:
                 methods_to_hook[hooking]["type"].append("LISTENER")
             else:
@@ -407,7 +404,6 @@ class IoTFuzzer:
             params = fragment[2]
             ret = fragment[3]
             hooking = self.method_to_string(cls, method, params, ret, self.config['proc_name'])
-
             if hooking in methods_to_hook:
                 methods_to_hook[hooking]["type"].append("FRAGMENT")
             else:
@@ -419,6 +415,7 @@ class IoTFuzzer:
                 methods_to_hook[hooking]['ret'] = ret
 
         self.hook_app(methods_to_hook)
+
 
     def run(self, phase=Phase.FUZZING):
         try:
@@ -513,38 +510,6 @@ class IoTFuzzer:
                 intermediate_methods_to_hook = self.target_methods_hooker.intermediate_methods_to_hook
                 listeners_to_hook = self.target_methods_hooker.listeners
                 fragments_to_hook = self.target_methods_hooker.fragments
-
-                """
-                intermediate_methods_to_hook = list(self.target_methods_hooker.intermediate_methods_to_hook)
-                listeners_to_hook = list(self.target_methods_hooker.listeners)
-                fragments_to_hook = list(self.target_methods_hooker.fragments)
-
-                if len(intermediate_methods_to_hook) > 0:
-                    self.hooker.instrumenting_app = False
-                    intermediate_methods_to_hook = self.verify_hook_on_methods(intermediate_methods_to_hook)
-                    time.sleep(2)
-
-                if len(listeners_to_hook) > 0:
-                    self.hooker.instrumenting_app = False
-                    listeners_to_hook = self.verify_hook_on_methods(listeners_to_hook)
-                    time.sleep(2)
-
-                if len(fragments_to_hook) > 0:
-                    self.hooker.instrumenting_app = False
-                    fragments_to_hook = self.verify_hook_on_methods(fragments_to_hook)
-                    self.hooker.instrumenting_app = False
-                    self.hooker.terminate()
-
-                logger.debug(f"Hooking {len(self.target_methods_hooker.sink_methods_to_hook)} sender methods")
-                logger.debug(f"Hooking {len(intermediate_methods_to_hook)} intermediate methods")
-                logger.debug(f"Hooking {len(listeners_to_hook)} listener methods")
-                logger.debug(f"Hooking {len(fragments_to_hook)} fragment methods")
-
-                try:
-                    self.emulator.terminate()
-                except ApkExploded:
-                    pass
-                """
 
                 logger.info("Start app testing")
                 test_app = TestApp(hooker=self.hooker,

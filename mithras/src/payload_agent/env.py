@@ -1,3 +1,4 @@
+import random
 import re
 import threading
 import time
@@ -20,10 +21,11 @@ class PayloadEnv(Env):
                  reward_good_intermediate: float, reward_bad_intermediate: float, reward_exploit_done: float,
                  reward_exploit_not_done: float, rce_call_log: str,
                  iot_device_execution_trace_file_lock: threading.Lock,
-                 exec_output_file_lock: threading.Lock):
+                 exec_output_file_lock: threading.Lock, coverage_guiding=False):
         self.max_num_sink_parameters = max_num_sink_parameters
 
         self.package = package
+        self.coverage_guiding = coverage_guiding
         self.working_dir = working_dir
         self.log_dir = log_dir
         self.firmware_name = firmware_name
@@ -41,6 +43,8 @@ class PayloadEnv(Env):
         self.iot_device_execution_trace_file_lock = iot_device_execution_trace_file_lock
         self.exec_output_file_lock = exec_output_file_lock
         self.layout_sink_method_called_signature = ""
+        self.seeds_with_coverage = dict()
+
         with open(prefixes_path, "r") as f:
             self.prefixes = f.readlines()
 
@@ -167,6 +171,11 @@ class PayloadEnv(Env):
         action_str = ""
         dict_to_return = dict()
         method_signature, class_name, method_parameter_values = self.get_method_parameter_values()
+
+        if self.coverage_guiding and len(self.seeds_with_coverage) > 0:
+            epsilon =  random.randint(0, 100)
+            if epsilon <= 60:
+                self.seed_for_method[method_signature] = max(self.seeds_with_coverage.items(), key=lambda x: x[1])[0]
 
         if self.additional_operators[action_number[3]] == "reset_seed":
             self.seed_for_method[method_signature] = method_parameter_values
